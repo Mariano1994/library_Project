@@ -1,5 +1,5 @@
 // BOOK's CONSTRUCTOR
-const Book = function (title, pages, author, state) {
+const Book = (title, pages, author, state) => {
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -7,12 +7,10 @@ const Book = function (title, pages, author, state) {
 };
 
 //  BOOK METHOD TO GET THE ALL BOOK INFORMATION
-Book.prototype.getInfo = function () {
-  return `${this.title} by ${this.author} has ${this.pages} pages`;
-};
+Book.prototype.getInfo = () => `${this.title} by ${this.author} has ${this.pages} pages`;
 
 // FUCNTION TO CREATE A NEW BOOK
-const createNewBook = function (title, author, pages, state) {
+const createNewBook = (title, author, pages, state) => {
   // USING BOOK PROTOTYPE TO CREATE NEW BOOKS
   const newBook = Object.create(Book.prototype);
   newBook.title = title;
@@ -25,7 +23,7 @@ const createNewBook = function (title, author, pages, state) {
 
 const books = [];
 // FUNCTION TO ADD NEW BOOK ON THE LIBRARY
-const addNewBook = function (book) {
+const addNewBook = (book) => {
   books.push(book);
 };
 
